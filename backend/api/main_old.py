@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import uuid
+from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -37,6 +38,8 @@ from backend.graph.pattern_score import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+load_dotenv() 
+
 CATEGORY_WINDOWS = {
     "EXPLOSION_FIRE":      7,
     "CHEMICAL_EXPOSURE":   14,
@@ -53,7 +56,7 @@ CATEGORY_WINDOWS = {
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    db_url = os.getenv("DATABASE_URL", "postgresql://postgres:oilsif357@localhost:5432/sif_db")
+    db_url = os.getenv("DATABASE_URL")
     engine = init_db(db_url)
     logger.info("DB initialized")
     # Load site registry from DB

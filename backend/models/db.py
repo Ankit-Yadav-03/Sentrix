@@ -14,7 +14,9 @@ from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy.sql import func
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 Base = declarative_base()
 
 
@@ -162,8 +164,7 @@ class ValidationFailure(Base):
 
 # Database connection
 def get_engine(database_url: str = None):
-    url = database_url or os.getenv("DATABASE_URL",
-          "postgresql://postgres:oilsif357@localhost:5432/sif_db")
+    url = database_url or os.getenv("DATABASE_URL")
     return create_engine(url, echo=False, pool_pre_ping=True)
 
 

@@ -108,7 +108,7 @@ ollama pull qwen3:8B         # ~4.7GB download (one time)
 ### 5. Start the Backend
 
 ```bash
-uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 API available at: http://localhost:8000  
@@ -254,7 +254,13 @@ Target: ≥ 82% weighted F1, maximize CRITICAL severity recall.
 ```
 sih26165/
 ├── backend/
-│   ├── api/main.py              # FastAPI app — all routes
+│   ├── main.py                  # FastAPI app entry point
+│   ├── api/
+│   │   ├── reports.py           # /submit/text, /submit/pdf, /reports
+│   │   ├── sites.py             # /sites, /sites/{site_id}, /sites/{site_id}/state
+│   │   ├── clusters.py          # /clusters, /clusters/{cluster_id}
+│   │   ├── dashboard.py         # /health, /stats, /alerts, /validation-failures
+│   │   └── dependencies.py      # Shared helpers & pipeline logic
 │   ├── models/db.py             # SQLAlchemy ORM models
 │   ├── ontology/registry.json   # 6 categories, 24 subtypes, standards refs
 │   ├── pipeline/

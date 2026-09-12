@@ -10,11 +10,14 @@ Requires DATABASE_URL environment variable (or uses default).
 import os
 import sys
 import uuid
+from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+load_dotenv()
 
 from backend.models.db import (
     init_db, get_session, Report, OntologyMapping, Classification,
@@ -943,7 +946,7 @@ def main():
     print("=" * 60)
     
     # Init DB
-    db_url = os.getenv("DATABASE_URL", "postgresql://postgres:oilsif357@localhost:5432/sif_db")
+    db_url = os.getenv("DATABASE_URL")
     
     try:
         engine = init_db(db_url)

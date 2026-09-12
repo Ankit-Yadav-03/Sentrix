@@ -8,10 +8,12 @@ Architecture doc Sections 8.1–8.5.
 
 import logging
 import os
+from dotenv import load_dotenv
 from pathlib import Path
 from typing import Optional
 
 logger = logging.getLogger(__name__)
+load_dotenv()
 
 MODEL_PATH = os.getenv("CLASSIFIER_MODEL_PATH", "./models/distilbert-sif-v1.0")
 MODEL_VERSION = "distilbert-sif-v1.0"

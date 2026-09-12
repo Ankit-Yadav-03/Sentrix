@@ -10,11 +10,13 @@ import json
 import os
 import re
 import logging
+from dotenv import load_dotenv
 from pathlib import Path
 
 import httpx
 
 logger = logging.getLogger(__name__)
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Load ontology vocabulary at module import (injected into prompt at runtime)
