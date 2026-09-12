@@ -3,36 +3,55 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { toIST, toISTDate } from "../../lib/datetime";
 import Link from "next/link";
+import Navbar from "../../components/Navbar";
 
 const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 const STATE_COLORS = {
-  NOMINAL: "bg-green-100 text-green-800", WATCH: "bg-yellow-100 text-yellow-800",
-  ELEVATED: "bg-orange-100 text-orange-800", CRITICAL: "bg-red-100 text-red-800 font-bold",
+  NOMINAL: "bg-nominal-badge-bg text-nominal-green", WATCH: "bg-watch-badge-bg text-watch-yellow",
+  ELEVATED: "bg-elevated-badge-bg text-elevated-orange", CRITICAL: "bg-critical-badge-bg text-critical-red font-bold",
 };
 const SEV_COLORS = {
-  LOW: "bg-blue-100 text-blue-700", MEDIUM: "bg-yellow-100 text-yellow-700",
-  HIGH: "bg-orange-100 text-orange-700", CRITICAL: "bg-red-100 text-red-700 font-bold",
+  LOW: "bg-low-sev-bg text-low-sev-text", MEDIUM: "bg-medium-sev-bg text-medium-sev-text",
+  HIGH: "bg-high-sev-bg text-high-sev-text", CRITICAL: "bg-critical-sev-bg text-critical-sev-text font-bold",
 };
 const COMPONENT_WEIGHTS = {
   density: 0.25, edge_strength: 0.20, velocity: 0.20, severity: 0.20, concentration: 0.15,
 };
 
+function StateChip({ state }) {
+  return (
+    <span className={`state-badge ${STATE_COLORS[state] || STATE_COLORS.NOMINAL}`}>
+      {state}
+    </span>
+  );
+}
+
+function SeverityChip({ sev }) {
+  return (
+    <span className={`severity-badge ${SEV_COLORS[sev] || "bg-border text-text-secondary"}`}>
+      {sev}
+    </span>
+  );
+}
+
 function ScoreRow({ label, value, weight }) {
   const pct = Math.round((value || 0) * 100);
   const contribution = ((value || 0) * weight * 100).toFixed(1);
+  const riskColor = "bg-accent-orange"; // default, could be passed in
   return (
-    <tr className="border-b border-gray-100">
-      <td className="py-2.5 pr-4 text-sm text-gray-700 font-medium capitalize">{label.replace(/_/g," ")}</td>
+    <tr className="border-b divide-border">
+      <td className="py-2.5 pr-4 text-sm text-text-secondary font-medium capitalize">{label.replace(/_/g," ")}</td>
       <td className="py-2.5 pr-4 w-32">
         <div className="flex items-center gap-2">
-          <div className="flex-1 bg-gray-100 rounded h-2">
-            <div className="bg-blue-500 h-2 rounded" style={{width:`${pct}%`}} />
+          <div className="flex-1 progress-bar">
+            <div className="progress-fill bg-accent-orange" style={{width:`${pct}%`}} />
           </div>
         </div>
       </td>
-      <td className="py-2.5 pr-4 text-sm font-mono text-gray-700 w-16">{value?.toFixed(4)}</td>
-      <td className="py-2.5 pr-4 text-xs text-gray-500 w-12">×{weight}</td>
-      <td className="py-2.5 text-sm font-mono text-blue-600 w-16">{contribution}%</td>
+      <td className="py-2.5 pr-4 text-sm font-mono text-text-primary w-16">{value?.toFixed(4)}</td>
+      <td className="py-2.5 pr-4 text-xs text-text-secondary w-12">×{weight}</td>
+      <td className="py-2.5 text-sm font-mono text-accent-orange w-16">{contribution}%</td>
     </tr>
   );
 }
@@ -49,39 +68,30 @@ export default function ClusterDetail() {
       .then(r => r.json()).then(setCluster).finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center text-gray-400">Loading…</div>;
-  if (!cluster || cluster.detail) return <div className="min-h-screen flex items-center justify-center text-red-500">Cluster not found</div>;
+  if (loading) return <div className="min-h-screen flex items-center justify-center text-text-secondary">Loading…</div>;
+  if (!cluster || cluster.detail) return <div className="min-h-screen flex items-center justify-center text-critical-red">Cluster not found</div>;
 
   return (
     <>
       <Head><title>Cluster {cluster.subtype_id} — SIF Detection</title></Head>
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-white border-b px-6 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-bold text-gray-900">Cluster Detail</h1>
-            <p className="text-xs text-gray-500">{cluster.site_id} · {cluster.sif_category?.replace(/_/g," ")} · {cluster.subtype_id}</p>
-          </div>
-          <nav className="flex gap-4 text-sm">
-            <Link href="/" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
-            <Link href="/clusters" className="text-gray-600 hover:text-gray-900">← Clusters</Link>
-          </nav>
-        </header>
+      <div className="min-h-screen">
+
+        <Navbar />
+
         <main className="max-w-5xl mx-auto px-6 py-8 space-y-6">
 
           {/* Summary cards */}
           <div className="grid grid-cols-4 gap-4">
             {[
-              ["Pattern Score", cluster.pattern_score?.toFixed(4), "text-gray-900"],
+              ["Pattern Score", cluster.pattern_score?.toFixed(4), "text-text-primary"],
               ["Risk State", null, null],
-              ["Reports in Cluster", cluster.reports?.length, "text-gray-900"],
-              ["Edges", cluster.edge_count, "text-gray-900"],
+              ["Reports in Cluster", cluster.reports?.length, "text-text-primary"],
+              ["Edges", cluster.edge_count, "text-text-primary"],
             ].map(([label, val, cls], i) => (
-              <div key={label} className="bg-white rounded-lg border p-4 shadow-sm">
-                <p className="text-xs text-gray-500">{label}</p>
+              <div key={label} className="card p-4">
+                <p className="text-xs text-text-secondary">{label}</p>
                 {i === 1 ? (
-                  <span className={`inline-block mt-1 px-3 py-1 rounded font-semibold text-sm ${STATE_COLORS[cluster.risk_state]}`}>
-                    {cluster.risk_state}
-                  </span>
+                  <StateChip state={cluster.risk_state} />
                 ) : (
                   <p className={`text-2xl font-bold mt-1 ${cls}`}>{val ?? "—"}</p>
                 )}
@@ -91,16 +101,16 @@ export default function ClusterDetail() {
 
           {/* Pattern Score Breakdown */}
           {cluster.score_components && (
-            <div className="bg-white rounded-lg border p-5 shadow-sm">
-              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Pattern Score Breakdown</h2>
-              <div className="mb-3 text-xs text-gray-500">
-                Score = Σ(component × weight) = <strong className="text-gray-800">{cluster.pattern_score?.toFixed(4)}</strong>
+            <div className="card p-5">
+              <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4">Pattern Score Breakdown</h2>
+              <div className="mb-3 text-xs text-text-secondary">
+                Score = Σ(component × weight) = <strong className="text-text-primary">{cluster.pattern_score?.toFixed(4)}</strong>
               </div>
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-gray-200">
+                  <tr className="border-b divide-border">
                     {["Component","Bar","Value","Weight","Contribution"].map(h => (
-                      <th key={h} className="pb-2 text-left text-xs font-semibold text-gray-500">{h}</th>
+                      <th key={h} className="pb-2 text-left text-xs font-semibold text-text-secondary">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -115,36 +125,34 @@ export default function ClusterDetail() {
 
           {/* Reports in cluster */}
           {cluster.reports?.length > 0 && (
-            <div className="bg-white rounded-lg border p-5 shadow-sm">
-              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+            <div className="card p-5">
+              <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4">
                 Reports ({cluster.reports.length})
               </h2>
               <div className="space-y-3">
                 {cluster.reports.map(r => (
-                  <div key={r.report_id} className="border border-gray-100 rounded-lg p-4 hover:bg-gray-50">
+                  <div key={r.report_id} className="card-hover border border-border rounded-lg p-4 transition-colors">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <Link href={`/reports/${r.report_id}`}
-                            className="text-sm font-mono text-blue-600 hover:underline">
+                            className="text-sm font-mono text-accent-orange hover:underline">
                             {r.osha_id || r.report_id?.slice(0,12)}…
                           </Link>
-                          {r.severity && (
-                            <span className={`px-2 py-0.5 rounded text-xs ${SEV_COLORS[r.severity]}`}>{r.severity}</span>
-                          )}
+                          {r.severity && <SeverityChip sev={r.severity} />}
                         </div>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-text-secondary">
                           {r.site_id} · {r.submitted_at ? toIST(r.submitted_at) : "—"}
                         </p>
                         {r.evidence_span && (
-                          <p className="text-xs text-gray-600 italic mt-1 max-w-xl">"{r.evidence_span?.slice(0,120)}…"</p>
+                          <p className="text-xs text-text-secondary italic mt-1 max-w-xl">"{r.evidence_span?.slice(0,120)}…"</p>
                         )}
                       </div>
                     </div>
                     {r.contributing_factors?.length > 0 && (
                       <div className="flex gap-1 mt-2">
                         {r.contributing_factors.map(f => (
-                          <span key={f} className="px-1.5 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">{f}</span>
+                          <span key={f} className="px-1.5 py-0.5 bg-purple-900/30 text-purple-300 rounded text-xs">{f}</span>
                         ))}
                       </div>
                     )}
@@ -154,7 +162,7 @@ export default function ClusterDetail() {
             </div>
           )}
 
-          <div className="text-xs text-gray-400">
+          <div className="text-xs text-text-secondary">
             Cluster ID: {cluster.cluster_id} · First seen: {cluster.first_seen ? toIST(cluster.first_seen) : "—"} ·
             Last updated: {cluster.last_updated ? toIST(cluster.last_updated) : "—"}
           </div>
