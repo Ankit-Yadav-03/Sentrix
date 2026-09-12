@@ -10,7 +10,7 @@ from sqlalchemy import (
     Column, String, Text, Float, Boolean, DateTime, ForeignKey, ARRAY,
     create_engine, event
 )
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy.sql import func
 import os
@@ -105,16 +105,17 @@ class GraphEdge(Base):
 class Cluster(Base):
     __tablename__ = "clusters"
 
-    cluster_id    = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    site_id       = Column(String(50))  # NULL for cross-site
-    sif_category  = Column(String(30), nullable=False)
-    subtype_id    = Column(String(20))  # NULL for mixed-subtype
-    report_ids    = Column(ARRAY(UUID(as_uuid=True)), nullable=False)
-    pattern_score = Column(Float, nullable=False)
-    risk_state    = Column(String(10), nullable=False)
-    first_seen    = Column(DateTime(timezone=True), nullable=False)
-    last_updated  = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    active        = Column(Boolean, nullable=False, default=True)
+    cluster_id        = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    site_id           = Column(String(50))  # NULL for cross-site
+    sif_category      = Column(String(30), nullable=False)
+    subtype_id        = Column(String(20))  # NULL for mixed-subtype
+    report_ids        = Column(ARRAY(UUID(as_uuid=True)), nullable=False)
+    pattern_score     = Column(Float, nullable=False)
+    risk_state        = Column(String(10), nullable=False)
+    first_seen        = Column(DateTime(timezone=True), nullable=False)
+    last_updated      = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    active            = Column(Boolean, nullable=False, default=True)
+    score_components  = Column(JSONB, nullable=True)
 
 
 class SiteRiskState(Base):

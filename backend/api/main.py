@@ -633,6 +633,49 @@ def get_site(site_id: str, db: Session = Depends(get_db)):
 
 
 # ---------------------------------------------------------------------------
+# GET /sites/{site_id}/state — site risk state summary
+# ---------------------------------------------------------------------------
+
+@app.get("/sites/{site_id}/state")
+def get_site_state(site_id: str, db: Session = Depends(get_db)):
+    if site_id not in SITE_REGISTRY:
+        raise HTTPException(status_code=404, detail=f"Unknown site: {site_id}")
+
+    state = db.query(SiteRiskState).filter(SiteRiskState.site_id == site_id).first()
+    if not state:
+        return {
+            "site_id": site_id,
+            "current_state": "NOMINAL",
+            "dominant_category": None,
+            "dominant_cluster_pattern_score": None,
+            "active_clusters": 0,
+        }
+
+    # Get dominant cluster pattern_score
+    dominant_cluster_score = None
+    if state.dominant_cluster:
+        dom_cluster = db.query(Cluster).filter(Cluster.cluster_id == state.dominant_cluster).first()
+        if dom_cluster:
+            dominant_cluster_score = dom_cluster.pattern_score
+
+    # Count active clusters for this site
+    active_clusters = db.query(Cluster).filter(
+        Cluster.site_id == site_id,
+        Cluster.active == True,
+    ).count()
+
+    return {
+        "site_id": site_id,
+        "current_state": state.current_state,
+        "dominant_category": state.dominant_category,
+        "dominant_cluster_pattern_score": dominant_cluster_score,
+        "active_clusters": active_clusters,
+        "state_entered_at": state.state_entered_at.isoformat() if state.state_entered_at else None,
+        "last_evaluated_at": state.last_evaluated_at.isoformat() if state.last_evaluated_at else None,
+    }
+
+
+# ---------------------------------------------------------------------------
 # GET /clusters — all active clusters
 # ---------------------------------------------------------------------------
 
@@ -682,11 +725,17 @@ def get_cluster(cluster_id: str, db: Session = Depends(get_db)):
     if not cluster:
         raise HTTPException(status_code=404, detail="Cluster not found")
 
-    # Recompute score breakdown live
-    window = CATEGORY_WINDOWS.get(cluster.sif_category, 30)
-    score_result = compute_site_cluster_score(
-        db, cluster.site_id, cluster.subtype_id, window
-    )
+    # Use stored score_components if available, otherwise recompute
+    if cluster.score_components:
+        score_components = cluster.score_components
+        edge_count = 0  # Not stored, could be added later
+    else:
+        window = CATEGORY_WINDOWS.get(cluster.sif_category, 30)
+        score_result = compute_site_cluster_score(
+            db, cluster.site_id, cluster.subtype_id, window
+        )
+        score_components = score_result.get("score_components", {})
+        edge_count = score_result.get("edge_count", 0)
 
     # Fetch individual reports in cluster
     report_ids = cluster.report_ids or []
@@ -717,8 +766,8 @@ def get_cluster(cluster_id: str, db: Session = Depends(get_db)):
         "risk_state":       cluster.risk_state,
         "first_seen":       cluster.first_seen.isoformat() if cluster.first_seen else None,
         "last_updated":     cluster.last_updated.isoformat() if cluster.last_updated else None,
-        "score_components": score_result.get("score_components", {}),
-        "edge_count":       score_result.get("edge_count", 0),
+        "score_components": score_components,
+        "edge_count":       edge_count,
         "reports":          reports_detail,
     }
 
