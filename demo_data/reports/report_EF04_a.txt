@@ -1,0 +1,17 @@
+# OSHA_REPORT_ID: 202-0399-17
+# GROUND_TRUTH: EF.04
+# SITE_ID: OIL_SITE_02
+
+OSHA Near-Miss Incident Report — Petroleum Sector
+
+Incident Date: 2026-07-29
+Location: Tank Farm, Storage Tank ST-08
+Reported by: Operations Manager
+
+Summary:
+During routine startup operations following a 3-day planned maintenance shutdown, Storage Tank ST-08 capacity 5000 KL crude oil experienced an overpressure event. The pressure relief valve on ST-08 opened slightly above its set pressure. Investigation revealed that the PRV had been partially blinded during maintenance with a spectacle blank that was not fully removed before startup. The secondary vent line valve had been left in the closed position by the maintenance crew following nitrogen blanketing operations. When crude filling commenced at the design fill rate, the tank pressure rose faster than the inbreathing vent could relieve, causing the PRV to lift and discharge crude oil vapour to the vent stack for approximately 4 minutes.
+
+Risk assessment: Had an ignition source been present near the vent stack discharge point in the Zone 2 hazardous area, a significant fire or explosion was probable. Grinders were observed still present on scaffolding adjacent to the storage tank.
+
+Equipment: Storage tank ST-08, pressure vessel PRV, drum spectacle blank.
+Activity: Operation, startup, shutdown.

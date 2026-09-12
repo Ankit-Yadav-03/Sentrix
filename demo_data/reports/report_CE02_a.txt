@@ -1,0 +1,15 @@
+# OSHA_REPORT_ID: 202-0441-09
+# GROUND_TRUTH: CE.02
+# SITE_ID: OIL_SITE_04
+
+OSHA Near-Miss Incident Report — Petroleum Sector
+
+Incident Date: 2026-08-10
+Location: Production Area, Well Pad W-07
+Reported by: Production Superintendent
+
+Summary:
+During well servicing operations at Well Pad W-07, the portable H2S monitor carried by the lead operator alarmed at 8 ppm H2S (alarm threshold: 5 ppm). At the time of the alarm, the operator was working near the well head during a wireline intervention job without SCBA equipment. SCBA units were staged 15 meters away at the muster point but were not donned prior to job commencement as the work permit did not mandate SCBA for this activity level. The operator immediately retreated to the muster point and donned SCBA. Wind shift had carried H2S vapour from the well annulus toward the work zone. The separator adjacent to the well head had a minor valve seat leak releasing trace H2S.
+
+Equipment: H2S monitor, SCBA equipment, well head, separator, wireline equipment.
+Personnel: 1 operator directly exposed to hydrogen sulphide, 2 additional workers in proximity.

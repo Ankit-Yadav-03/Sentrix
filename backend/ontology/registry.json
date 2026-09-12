@@ -1,0 +1,359 @@
+{
+  "version": "1.0",
+  "source": "ILO OSH-MS 2001 / OISD-STD-155 / OISD-GDN-206 / OSHA 29 CFR 1910",
+  "categories": {
+    "FALL_FROM_HEIGHT": {
+      "subtypes": {
+        "FFH.01": {
+          "name": "Unprotected Edge Exposure",
+          "description": "Working at elevation without edge protection, guardrails absent or bypassed.",
+          "contributing_factors": ["PPE_FAILURE", "PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "ENVIRONMENTAL"],
+          "equipment_classes": ["SCAFFOLD", "LADDER", "ELEVATED_PLATFORM", "ROOF_STRUCTURE", "TANK_TOP"],
+          "activity_contexts": ["MAINTENANCE", "INSPECTION", "CONSTRUCTION", "CLEANING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.9: Prevention of Falls from Height",
+            "OISD-STD-155 — Clause 5.2: Working at Height Safety",
+            "OSHA 29 CFR 1926.502 — Fall Protection Systems Criteria"
+          ]
+        },
+        "FFH.02": {
+          "name": "Ladder Failure or Misuse",
+          "description": "Fall resulting from ladder instability, improper setup, or operator misuse.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "PPE_FAILURE"],
+          "equipment_classes": ["LADDER", "STEP_LADDER", "EXTENSION_LADDER", "PORTABLE_LADDER"],
+          "activity_contexts": ["MAINTENANCE", "INSPECTION", "CLEANING", "INSTALLATION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.9: Portable Ladder Safety",
+            "OISD-STD-155 — Clause 5.3: Ladder Safety Requirements",
+            "OSHA 29 CFR 1910.23 — Ladders"
+          ]
+        },
+        "FFH.03": {
+          "name": "Scaffold Collapse or Failure",
+          "description": "Scaffold structure fails, collapses, or becomes unstable during use.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "ENVIRONMENTAL"],
+          "equipment_classes": ["SCAFFOLD", "SCAFFOLD_BOARD", "SCAFFOLD_FRAME", "MOBILE_SCAFFOLD"],
+          "activity_contexts": ["CONSTRUCTION", "MAINTENANCE", "PAINTING", "INSPECTION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.9: Scaffolding Safety",
+            "OISD-STD-155 — Clause 5.4: Scaffolding Requirements",
+            "OSHA 29 CFR 1926.451 — General Industry Scaffolding"
+          ]
+        },
+        "FFH.04": {
+          "name": "Fall Through Fragile Surface",
+          "description": "Worker falls through unprotected fragile surface such as grating, skylight, or weakened floor.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "ENVIRONMENTAL"],
+          "equipment_classes": ["GRATING", "FLOOR_PLATE", "ROOF_SURFACE", "ELEVATED_PLATFORM"],
+          "activity_contexts": ["MAINTENANCE", "INSPECTION", "CLEANING", "CONSTRUCTION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.9: Fragile Surface Hazards",
+            "OISD-STD-155 — Clause 5.5: Surface Integrity Requirements",
+            "OSHA 29 CFR 1910.23 — Walking-Working Surfaces"
+          ]
+        }
+      }
+    },
+    "CAUGHT_IN_STRUCK_BY": {
+      "subtypes": {
+        "CISB.01": {
+          "name": "Caught in Rotating Equipment",
+          "description": "Worker body part caught in or entangled with rotating machinery.",
+          "contributing_factors": ["PPE_FAILURE", "PROCEDURE_VIOLATION", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["PUMP", "COMPRESSOR", "CONVEYOR", "ROTATING_MACHINERY", "DRILL"],
+          "activity_contexts": ["MAINTENANCE", "INSPECTION", "OPERATION", "DRILLING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.8: Machine Guarding",
+            "OISD-STD-155 — Clause 6.1: Rotating Equipment Safety",
+            "OSHA 29 CFR 1910.212 — Machine Guarding"
+          ]
+        },
+        "CISB.02": {
+          "name": "Struck by Falling Object",
+          "description": "Worker struck by object falling from height, dropped tools, or dislodged materials.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "PPE_FAILURE", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["TOOL", "EQUIPMENT_PART", "MATERIAL", "SCAFFOLD", "CRANE"],
+          "activity_contexts": ["CONSTRUCTION", "MAINTENANCE", "INSPECTION", "LIFTING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.8: Falling Object Protection",
+            "OISD-STD-155 — Clause 6.2: Dropped Object Prevention",
+            "OSHA 29 CFR 1926.502 — Personal Fall Arrest Systems"
+          ]
+        },
+        "CISB.03": {
+          "name": "Struck by Moving Equipment or Vehicle",
+          "description": "Worker struck by moving vehicle, crane load, or mobile equipment.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "ENVIRONMENTAL", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["VEHICLE", "CRANE", "FORKLIFT", "MOBILE_EQUIPMENT", "TANKER"],
+          "activity_contexts": ["VEHICLE_OPERATION", "LIFTING", "LOADING", "UNLOADING", "TRANSPORT"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.8: Vehicle Safety",
+            "OISD-STD-155 — Clause 6.3: Mobile Equipment Safety",
+            "OSHA 29 CFR 1910.178 — Powered Industrial Trucks"
+          ]
+        },
+        "CISB.04": {
+          "name": "Pressure Release or Ejection Strike",
+          "description": "Worker struck by pressurized ejection: line whip, blowout, pressurized fluid release.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "PPE_FAILURE"],
+          "equipment_classes": ["PRESSURE_VESSEL", "PIPELINE", "VALVE", "HOSE", "FITTING"],
+          "activity_contexts": ["OPERATION", "MAINTENANCE", "TRANSFER", "TESTING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.8: Pressure Hazards",
+            "OISD-STD-155 — Clause 6.4: Pressure Relief Systems",
+            "OSHA 29 CFR 1910.119 — Process Safety Management"
+          ]
+        }
+      }
+    },
+    "EXPLOSION_FIRE": {
+      "subtypes": {
+        "EF.01": {
+          "name": "Hydrocarbon Ignition — Vapour Cloud",
+          "description": "Ignition of escaped hydrocarbon vapour cloud causing flash fire or explosion.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "ENVIRONMENTAL"],
+          "equipment_classes": ["PIPELINE", "VESSEL", "PUMP", "FLANGE", "VALVE", "COMPRESSOR"],
+          "activity_contexts": ["OPERATION", "TRANSFER", "MAINTENANCE", "STARTUP"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.6: Fire and Explosion Prevention",
+            "OISD-STD-116 — Fire Protection Facilities in Petroleum Industry",
+            "OSHA 29 CFR 1910.119 — Process Safety Management of Highly Hazardous Chemicals"
+          ]
+        },
+        "EF.02": {
+          "name": "Hot Work Ignition",
+          "description": "Ignition caused by welding, grinding, or other hot work in hazardous area.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "PPE_FAILURE", "ENVIRONMENTAL"],
+          "equipment_classes": ["WELDING_EQUIPMENT", "GRINDER", "CUTTING_TORCH", "HEAT_SOURCE"],
+          "activity_contexts": ["WELDING", "MAINTENANCE", "CONSTRUCTION", "REPAIR"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.6: Hot Work Safety",
+            "OISD-STD-105 — Work Permit System",
+            "OSHA 29 CFR 1910.252 — Welding, Cutting, Brazing"
+          ]
+        },
+        "EF.03": {
+          "name": "Electrical Ignition",
+          "description": "Fire or explosion initiated by electrical fault, arcing, or inadequate area classification.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "ENVIRONMENTAL"],
+          "equipment_classes": ["ELECTRICAL_PANEL", "MOTOR", "CABLE", "JUNCTION_BOX", "SWITCH"],
+          "activity_contexts": ["ELECTRICAL_WORK", "MAINTENANCE", "OPERATION", "INSPECTION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.6: Electrical Fire Prevention",
+            "OISD-STD-137 — Electrical Safety",
+            "OSHA 29 CFR 1910.303 — Electrical Safety"
+          ]
+        },
+        "EF.04": {
+          "name": "Tank or Vessel Overpressure",
+          "description": "Storage tank or pressure vessel overpressure event; BLEVE risk or actual rupture.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "ENVIRONMENTAL"],
+          "equipment_classes": ["STORAGE_TANK", "PRESSURE_VESSEL", "REACTOR", "SEPARATOR", "DRUM"],
+          "activity_contexts": ["OPERATION", "STARTUP", "SHUTDOWN", "MAINTENANCE"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.6: Pressure Vessel Safety",
+            "OISD-STD-118 — Layout for Oil and Gas Installations",
+            "OSHA 29 CFR 1910.119 — PSM — Pressure Systems"
+          ]
+        }
+      }
+    },
+    "CHEMICAL_EXPOSURE": {
+      "subtypes": {
+        "CE.01": {
+          "name": "PPE Failure During Toxic Substance Handling",
+          "description": "Worker handles toxic or corrosive chemical without adequate personal protection.",
+          "contributing_factors": ["PPE_FAILURE", "PROCEDURE_VIOLATION", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["CHEMICAL_DRUM", "REAGENT_TANK", "ACID_SYSTEM", "H2S_MONITOR", "CHEMICAL_LINE"],
+          "activity_contexts": ["CHEMICAL_HANDLING", "SAMPLING", "MAINTENANCE", "LABORATORY_WORK"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.2: Chemical Hazard Classification",
+            "OISD-STD-155 — Clause 7.4: PPE Requirements for Chemical Handling",
+            "OSHA 29 CFR 1910.132 — Personal Protective Equipment"
+          ]
+        },
+        "CE.02": {
+          "name": "H2S or Toxic Gas Exposure",
+          "description": "Personnel exposed to hydrogen sulphide or other toxic gas release above permissible limits.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "PPE_FAILURE"],
+          "equipment_classes": ["H2S_MONITOR", "GAS_DETECTOR", "SEPARATOR", "PIPELINE", "WELL_HEAD"],
+          "activity_contexts": ["OPERATION", "MAINTENANCE", "WELL_INTERVENTION", "SAMPLING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.2: Toxic Gas Hazards",
+            "OISD-STD-155 — Clause 7.1: H2S Safety Requirements",
+            "OSHA 29 CFR 1910.1000 — Air Contaminants"
+          ]
+        },
+        "CE.03": {
+          "name": "Chemical Spill with Personnel Contact",
+          "description": "Uncontrolled release of chemical substance resulting in skin or eye contact.",
+          "contributing_factors": ["EQUIPMENT_FAULT", "PROCEDURE_VIOLATION", "PPE_FAILURE"],
+          "equipment_classes": ["CHEMICAL_LINE", "PUMP", "VALVE", "HOSE", "CHEMICAL_DRUM", "REAGENT_TANK"],
+          "activity_contexts": ["CHEMICAL_HANDLING", "TRANSFER", "MAINTENANCE", "SAMPLING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.2: Chemical Spill Response",
+            "OISD-STD-155 — Clause 7.3: Spill Containment",
+            "OSHA 29 CFR 1910.120 — Hazardous Waste Operations"
+          ]
+        },
+        "CE.04": {
+          "name": "Inhalation Hazard — Confined Space",
+          "description": "Oxygen deficiency or toxic atmosphere exposure in confined space entry.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "PPE_FAILURE"],
+          "equipment_classes": ["GAS_DETECTOR", "CONFINED_SPACE", "VESSEL", "TANK", "SCBA"],
+          "activity_contexts": ["CONFINED_SPACE_ENTRY", "CLEANING", "MAINTENANCE", "INSPECTION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.2: Confined Space Safety",
+            "OISD-STD-155 — Clause 7.2: Confined Space Entry Procedures",
+            "OSHA 29 CFR 1910.146 — Permit-Required Confined Spaces"
+          ]
+        }
+      }
+    },
+    "ELECTRICAL": {
+      "subtypes": {
+        "ELEC.01": {
+          "name": "Direct Contact with Energized Equipment",
+          "description": "Worker makes direct contact with live electrical conductor or energized equipment.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "PPE_FAILURE"],
+          "equipment_classes": ["ELECTRICAL_PANEL", "CABLE", "CONDUCTOR", "SWITCH", "BUS_BAR"],
+          "activity_contexts": ["ELECTRICAL_WORK", "MAINTENANCE", "INSPECTION", "OPERATION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.5: Electrical Safety",
+            "OISD-STD-137 — Clause 4.1: Direct Contact Prevention",
+            "OSHA 29 CFR 1910.303 — Electrical Wiring Design"
+          ]
+        },
+        "ELEC.02": {
+          "name": "Arc Flash or Blast",
+          "description": "Electrical arc flash event exposing workers to extreme heat, pressure, and UV radiation.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "PPE_FAILURE"],
+          "equipment_classes": ["ELECTRICAL_PANEL", "SWITCHGEAR", "CIRCUIT_BREAKER", "MCC"],
+          "activity_contexts": ["ELECTRICAL_WORK", "MAINTENANCE", "INSPECTION", "STARTUP"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.5: Arc Flash Prevention",
+            "OISD-STD-137 — Clause 4.3: Arc Flash Hazard Analysis",
+            "OSHA 29 CFR 1910.303 — Arc Flash Protection"
+          ]
+        },
+        "ELEC.03": {
+          "name": "LOTO Failure — Unexpected Energization",
+          "description": "Equipment energizes unexpectedly due to Lockout/Tagout failure during maintenance.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["LOCKOUT_DEVICE", "MOTOR", "PUMP", "VALVE", "ELECTRICAL_PANEL"],
+          "activity_contexts": ["MAINTENANCE", "REPAIR", "INSPECTION", "INSTALLATION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.5: Lockout/Tagout Safety",
+            "OISD-STD-155 — Clause 8.2: Energy Isolation Procedures",
+            "OSHA 29 CFR 1910.147 — Control of Hazardous Energy"
+          ]
+        },
+        "ELEC.04": {
+          "name": "Static Discharge During Flammable Transfer",
+          "description": "Static electricity discharge during transfer of flammable liquids or gases.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "PPE_FAILURE"],
+          "equipment_classes": ["STORAGE_TANK", "TANKER", "TRANSFER_HOSE", "GROUNDING_CABLE"],
+          "activity_contexts": ["TRANSFER", "LOADING", "UNLOADING", "SAMPLING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.5: Static Electricity Hazards",
+            "OISD-STD-155 — Clause 8.4: Bonding and Grounding",
+            "OSHA 29 CFR 1910.306 — Specific Purpose Equipment"
+          ]
+        }
+      }
+    },
+    "VEHICLE_TRANSPORT": {
+      "subtypes": {
+        "VT.01": {
+          "name": "Tanker Rollover or Collision",
+          "description": "Petroleum tanker or heavy transport vehicle rolls over or collides, spill risk.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "ENVIRONMENTAL", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["TANKER", "VEHICLE", "TRUCK"],
+          "activity_contexts": ["TRANSPORT", "VEHICLE_OPERATION", "LOADING", "UNLOADING"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.10: Transportation Safety",
+            "OISD-STD-155 — Clause 9.1: Tanker Safety",
+            "OSHA 29 CFR 1910.178 — Powered Industrial Vehicles"
+          ]
+        },
+        "VT.02": {
+          "name": "Personnel Vehicle Incident — Site Roads",
+          "description": "Light vehicle collision or near-miss on site roads involving personnel.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "ENVIRONMENTAL", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["VEHICLE", "LIGHT_VEHICLE", "CAR", "SUV"],
+          "activity_contexts": ["TRANSPORT", "VEHICLE_OPERATION", "SITE_TRAVEL"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.10: Site Traffic Management",
+            "OISD-STD-155 — Clause 9.2: Site Road Safety",
+            "OSHA 29 CFR 1910.178 — Traffic Safety"
+          ]
+        },
+        "VT.03": {
+          "name": "Crane Load Swing or Drop",
+          "description": "Crane load swings uncontrolled or drops, endangering personnel.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "EQUIPMENT_FAULT", "ENVIRONMENTAL"],
+          "equipment_classes": ["CRANE", "RIGGING", "SLING", "SHACKLE", "LIFTING_BEAM"],
+          "activity_contexts": ["LIFTING", "CONSTRUCTION", "MAINTENANCE", "INSTALLATION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.10: Lifting Operations Safety",
+            "OISD-STD-155 — Clause 9.3: Crane and Lifting Safety",
+            "OSHA 29 CFR 1926.1400 — Cranes and Derricks"
+          ]
+        },
+        "VT.04": {
+          "name": "Forklift or Mobile Equipment Strike",
+          "description": "Forklift, telehandler, or similar mobile equipment strikes worker or structure.",
+          "contributing_factors": ["PROCEDURE_VIOLATION", "ENVIRONMENTAL", "EQUIPMENT_FAULT"],
+          "equipment_classes": ["FORKLIFT", "TELEHANDLER", "MOBILE_EQUIPMENT", "REACH_TRUCK"],
+          "activity_contexts": ["LOADING", "UNLOADING", "WAREHOUSE", "YARD_OPERATION"],
+          "standards_references": [
+            "ILO OSH-MS 2001 — Section 3.10: Forklift Safety",
+            "OISD-STD-155 — Clause 9.4: Mobile Equipment Safety",
+            "OSHA 29 CFR 1910.178 — Powered Industrial Trucks"
+          ]
+        }
+      }
+    }
+  },
+  "global_contributing_factors": [
+    "PPE_FAILURE",
+    "PROCEDURE_VIOLATION",
+    "EQUIPMENT_FAULT",
+    "ENVIRONMENTAL"
+  ],
+  "all_equipment_classes": [
+    "SCAFFOLD", "LADDER", "ELEVATED_PLATFORM", "ROOF_STRUCTURE", "TANK_TOP",
+    "STEP_LADDER", "EXTENSION_LADDER", "PORTABLE_LADDER",
+    "SCAFFOLD_BOARD", "SCAFFOLD_FRAME", "MOBILE_SCAFFOLD",
+    "GRATING", "FLOOR_PLATE", "ROOF_SURFACE",
+    "PUMP", "COMPRESSOR", "CONVEYOR", "ROTATING_MACHINERY", "DRILL",
+    "TOOL", "EQUIPMENT_PART", "MATERIAL", "CRANE",
+    "VEHICLE", "FORKLIFT", "MOBILE_EQUIPMENT", "TANKER",
+    "PRESSURE_VESSEL", "PIPELINE", "VALVE", "HOSE", "FITTING",
+    "PIPELINE", "VESSEL", "FLANGE", "SEPARATOR", "DRUM",
+    "WELDING_EQUIPMENT", "GRINDER", "CUTTING_TORCH", "HEAT_SOURCE",
+    "ELECTRICAL_PANEL", "MOTOR", "CABLE", "JUNCTION_BOX", "SWITCH",
+    "STORAGE_TANK", "REACTOR", "DRUM",
+    "CHEMICAL_DRUM", "REAGENT_TANK", "ACID_SYSTEM", "H2S_MONITOR", "CHEMICAL_LINE",
+    "GAS_DETECTOR", "WELL_HEAD",
+    "SCBA", "CONFINED_SPACE", "TANK",
+    "CONDUCTOR", "BUS_BAR", "SWITCHGEAR", "CIRCUIT_BREAKER", "MCC",
+    "LOCKOUT_DEVICE",
+    "GROUNDING_CABLE", "TRANSFER_HOSE",
+    "TRUCK", "LIGHT_VEHICLE", "CAR", "SUV",
+    "RIGGING", "SLING", "SHACKLE", "LIFTING_BEAM",
+    "TELEHANDLER", "REACH_TRUCK"
+  ],
+  "all_activity_contexts": [
+    "MAINTENANCE", "INSPECTION", "CONSTRUCTION", "CLEANING",
+    "INSTALLATION", "PAINTING", "REPAIR",
+    "OPERATION", "STARTUP", "SHUTDOWN", "TESTING",
+    "CHEMICAL_HANDLING", "SAMPLING", "LABORATORY_WORK",
+    "TRANSFER", "LOADING", "UNLOADING", "TRANSPORT",
+    "WELDING", "ELECTRICAL_WORK",
+    "VEHICLE_OPERATION", "LIFTING", "SITE_TRAVEL",
+    "DRILLING", "WELL_INTERVENTION",
+    "CONFINED_SPACE_ENTRY", "YARD_OPERATION",
+    "WAREHOUSE"
+  ]
+}

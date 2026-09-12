@@ -1,0 +1,17 @@
+# OSHA_REPORT_ID: 202-0427-33
+# GROUND_TRUTH: FFH.02
+# SITE_ID: OIL_SITE_11
+
+OSHA Near-Miss Incident Report
+
+Incident Date: 2026-08-12
+Location: Utility Area, Cooling Tower CT-3
+Reported by: Maintenance Foreman
+
+Summary:
+A maintenance technician was descending from Cooling Tower CT-3 using a portable extension ladder when the ladder foot slipped on a wet concrete surface at the base of the tower. The ladder slipped laterally approximately 300mm before the technician caught the ladder rails. The technician did not fall but experienced a significant near-loss of balance at approximately 3.5 metres elevation. No injury occurred.
+
+The concrete pad had standing water from cooling tower blowdown overflow. The ladder was set up on the wet surface without a ladder mat or securing system. The base of the ladder was not footed by a second person as required by site ladder safety procedure SOP-MAINT-012 for any ladder used above 3 metres. The ladder foot pads were worn, providing reduced grip. The maintenance team was understaffed on the shift.
+
+Equipment: Extension ladder, portable ladder.
+Activity: Maintenance.

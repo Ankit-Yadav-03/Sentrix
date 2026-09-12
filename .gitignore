@@ -1,0 +1,73 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python test and coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.pyre/
+
+# Virtual environments and local Python tooling
+.venv/
+venv/
+env/
+ENV/
+ENVIRON/
+.python-version
+
+# Build, distribution, and packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+.Python
+pip-wheel-metadata/
+
+# Jupyter and notebook artifacts
+.ipynb_checkpoints/
+
+# Local environment configuration
+.env
+.env.*
+!.env.example
+
+# Project and database artifacts
+*.sqlite3
+*.db
+*.db-journal
+
+# Logs and runtime files
+*.log
+*.pid
+.DS_Store
+Thumbs.db
+
+# IDE and editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+
+# Optional package manager caches
+.pnpm-store/
+.cache/
+
+# Generated reports or local uploads if they are not source files
+uploads/
+output/
+
+# OS files
+.DS_Store
+Thumbs.db

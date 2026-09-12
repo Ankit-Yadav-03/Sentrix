@@ -1,0 +1,18 @@
+# OSHA_REPORT_ID: 202-0375-28
+# GROUND_TRUTH: VT.01
+# SITE_ID: OIL_SITE_07
+
+OSHA Near-Miss Incident Report — Petroleum Transport
+
+Incident Date: 2026-07-31
+Location: Site Road Junction SR-4/SR-7, Oil Site 07
+
+Summary:
+A crude oil tanker loaded with crude oil at gross weight approximately 38 tonnes experienced a near-rollover incident at the intersection of Site Roads SR-4 and SR-7. The tanker driver took the corner at an estimated 35 km/h — the posted speed limit at the intersection is 15 km/h and the turn requires a near-stop due to the tight turning radius. The tanker's right-side wheels left the road surface for approximately 2 seconds before the vehicle corrected. The tanker did not overturn but came within an estimated 200mm of the concrete kerb barrier. At the time of the incident, two workers on foot were crossing SR-7 at the pedestrian crossing point, 15 metres from the near-miss location. Had the tanker vehicle overturned, the potential crude oil release would have posed a significant risk to personnel.
+
+Root cause analysis:
+1. Procedure violation: The driver's speed of 35 km/h exceeded the 15 km/h site speed limit. The driver was running behind schedule for their delivery window.
+2. The intersection had recently been reconfigured and the new tighter radius was not communicated to contracted tanker drivers. Speed limit signage was obscured by construction equipment.
+
+Equipment: Tanker crude oil 20KL, vehicle.
+Activity: Transport, vehicle operation.

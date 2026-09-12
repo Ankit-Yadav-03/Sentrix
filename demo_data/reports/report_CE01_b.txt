@@ -1,0 +1,18 @@
+# OSHA_REPORT_ID: 202-0471-18
+# GROUND_TRUTH: CE.01
+# SITE_ID: OIL_SITE_04
+
+OSHA Near-Miss Incident Report — Petroleum Refinery Sector
+
+Incident Date: 2026-08-28
+Location: Chemical Storage Area, Bay C
+Reported by: Safety Officer, Site 04
+
+Summary:
+During sampling activities at the chemical storage area, a laboratory technician collected a sample from a reagent tank containing sodium hydroxide caustic soda 30 percent solution without wearing the required chemical resistant gloves. The technician was wearing standard cotton work gloves, which do not provide adequate protection against caustic solutions. When the sample valve was opened, a small overflow occurred, wetting the technician's glove. The cotton glove provided no barrier protection and caustic solution contacted the skin on two fingers. The technician immediately accessed the hand wash station. Mild skin irritation was observed but no burns occurred.
+
+Investigation:
+The correct PPE (nitrile gloves rated for caustic handling) was stored in the chemical handling locker 3 meters from the sampling point. The technician stated they believed cotton gloves were sufficient. The PPE matrix posted at the sampling station clearly lists nitrile chemical resistant gloves as mandatory for caustic sampling. This is the second PPE non-compliance event involving chemical handling at this site within 14 days.
+
+Equipment: Reagent tank, sample valve, hand wash station.
+Activity: Sampling, chemical handling.

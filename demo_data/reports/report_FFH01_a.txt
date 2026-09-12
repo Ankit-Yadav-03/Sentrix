@@ -1,0 +1,20 @@
+# OSHA_REPORT_ID: 202-0412-55
+# GROUND_TRUTH: FFH.01
+# SITE_ID: OIL_SITE_07
+
+OSHA Near-Miss Incident Report
+
+Incident Date: 2026-08-05
+Location: Process Unit, Column C-02 Platform, Elevation 8m
+Reported by: Construction Safety Officer
+
+Summary:
+During inspection activities on distillation Column C-02, an operator was found working on the column platform at 8 metres elevation without a safety harness. The platform has a guardrail system on three sides, but the fourth side has a gap of 1.5 metres in the guardrail to accommodate the ladder landing. The operator was working within 0.8 metres of the unguarded edge while taking manual gauge readings. No fall occurred, but the near-miss was identified by the scaffolding supervisor passing below who observed the operator leaning over the unprotected edge without fall protection equipment.
+
+Contributing factors:
+1. PPE failure: Safety harness was available and required by site general rules but was not worn. Operator stated they believed harnesses were only required above 2 metres on scaffolding, not on fixed platforms.
+2. Procedure gap: The PTW did not specify harness requirement for the column platform elevated work area.
+3. The guardrail gap at the ladder landing had no temporary barrier or chain installed.
+
+Equipment: Elevated platform column C-02, ladder access.
+Activity: Inspection.

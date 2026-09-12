@@ -1,0 +1,19 @@
+# OSHA_REPORT_ID: 202-0362-91
+# GROUND_TRUTH: ELEC.01
+# SITE_ID: OIL_SITE_11
+
+OSHA Near-Miss Incident Report
+
+Incident Date: 2026-07-25
+Location: MCC Room 3, Motor Control Centre Panel MCC-3B
+Reported by: Electrical Supervisor
+
+Summary:
+An electrical technician received an electric shock while performing maintenance on Motor Control Centre panel MCC-3B. The technician was replacing a failed contactor on bus position 14 at 415V 3-phase. The work was being performed under a live bus permit with adjacent bus positions remaining energized. The technician used a standard screwdriver with non-insulated handle to tighten a terminal. The screwdriver blade slipped and contacted the live bus bar of the adjacent energized position, causing an arc flash and phase-to-earth short. The technician received a 415V shock through the screwdriver, arm, and body to earth via their boot. The technician was thrown backward approximately 0.5 metres and sustained minor burns on the right hand and wrist from the electrical arc.
+
+Contributing factors:
+1. Procedure violation: Live bus work procedures require use of fully-insulated IEC 1000V-rated tools. The screwdriver used was not rated for live electrical work.
+2. PPE failure: Arc-rated PPE including arc flash suit, face shield, and insulating gloves was required for live MCC work but was not worn.
+
+Equipment: Electrical panel MCC-3B, conductor bus bar.
+Activity: Electrical work, maintenance.

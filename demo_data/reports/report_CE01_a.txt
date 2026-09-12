@@ -1,0 +1,19 @@
+# OSHA_REPORT_ID: 202-0456-32
+# GROUND_TRUTH: CE.01
+# SITE_ID: OIL_SITE_04
+
+OSHA Near-Miss Incident Report — Petroleum Refinery Sector
+
+Incident Date: 2026-08-20
+Location: Tank Farm Area, Transfer Station T-12
+Reported by: Shift Supervisor, Unit 4
+
+Summary:
+During routine crude oil transfer operations at Transfer Station T-12, an operator was observed performing valve lineup activities on the chemical drum manifold without wearing chemical-resistant gloves. A leaking valve packing on the acid injection line allowed a small quantity of hydrochloric acid solution (15% concentration) to spray onto the operator's forearm. The operator was not wearing the mandatory chemical resistant gloves specified in the chemical handling procedure SOP-CHEM-007. The operator immediately moved to the emergency eyewash and shower station located 8 meters away and flushed the affected area for 15 minutes. No injury was sustained due to prompt first aid, but direct skin contact with acid occurred.
+
+Contributing Factors:
+1. PPE non-compliance: Operator failed to wear chemical-resistant nitrile gloves as required by procedure. Gloves were available at the station but not used due to perceived inconvenience.
+2. Procedure violation: The chemical handling procedure SOP-CHEM-007 requires full PPE including face shield, gloves, and apron for any valve operations on acid injection lines.
+3. Equipment condition: Valve packing on the acid injection line was deteriorated. Maintenance work order MW-4456 had been raised 6 days prior but not actioned.
+
+Equipment involved: Chemical drum manifold, acid injection valve, chemical injection line, emergency eyewash station.

@@ -1,0 +1,19 @@
+# OSHA_REPORT_ID: 202-0388-44
+# GROUND_TRUTH: EF.01
+# SITE_ID: OIL_SITE_02
+
+OSHA Near-Miss Incident Report — Petroleum Industry
+
+Incident Date: 2026-07-22
+Location: Crude Processing Unit, Pump Deck P-3
+Reported by: Process Engineer
+
+Summary:
+During a pump seal replacement on Crude Oil Pump P-3A, a hydrocarbon vapour cloud developed when a maintenance technician loosened the pump casing bolts before fully depressurizing and draining the pump casing. Approximately 40 litres of crude oil with dissolved gas was released at operating pressure. The volatile hydrocarbon vapour cloud extended approximately 4 metres in radius. A grinder being used by a contract worker approximately 6 metres away was operating at the time, creating an ignition hazard in the explosion risk zone. The contract worker was immediately instructed to cease grinding and the grinder was powered off. The area was evacuated and hydrocarbon vapour was dispersed by portable fans within 25 minutes.
+
+Contributing factors:
+1. Pressure isolation was inadequate — the isolation valve upstream had passed, allowing system pressure to remain in the casing despite isolation attempt.
+2. The maintenance procedure required a pressure check after isolation using a gauge at the drain point, which was not performed before bolt removal.
+3. Two simultaneous work permits were active in overlapping zones — pump maintenance and structural steelwork grinding — with no exclusion zone specified.
+
+Equipment: Pipeline, pump P-3A, flange casing, valve isolation.

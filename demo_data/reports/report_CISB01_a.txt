@@ -1,0 +1,17 @@
+# OSHA_REPORT_ID: 202-0348-77
+# GROUND_TRUTH: CISB.01
+# SITE_ID: OIL_SITE_15
+
+OSHA Near-Miss Incident Report — Petroleum Refinery
+
+Incident Date: 2026-07-18
+Location: Pump Station, Crude Pump P-7B
+Reported by: Mechanical Technician Lead
+
+Summary:
+During a planned inspection of Crude Oil Transfer Pump P-7B, a maintenance technician removed the coupling guard to inspect the coupling alignment condition. While the technician was attempting to measure coupling runout with a dial indicator, the control room operator initiated an automatic pump start sequence for pump P-7B as part of a flow balancing operation, unaware of the maintenance activity. The motor started. The technician heard the motor energize and immediately pulled their hand back from the coupling area before contact with the rotating machinery was made. No contact occurred, but the incident was within an estimated 0.5 seconds of potential entanglement in the rotating equipment.
+
+Root cause: LOTO (Lockout/Tagout) was not applied before the coupling guard was removed. The work order for coupling inspection required a permit to work and LOTO application, but the technician bypassed the permit process describing the task as a quick visual check.
+
+Equipment: Pump P-7B, rotating machinery coupling assembly, lockout device (not used).
+Activity: Maintenance, inspection.
