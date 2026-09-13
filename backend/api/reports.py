@@ -138,10 +138,13 @@ def list_reports(
     db: Session = Depends(get_db),
 ):
     q = db.query(Report)
+
     if site_id:
-        q = q.filter(Report.site_id == site_id)
+        q = q.filter(Report.site_id.ilike(f"%{site_id}%"))
+
     if status:
         q = q.filter(Report.processing_status == status)
+
     total = q.count()
     reports = q.order_by(Report.submitted_at.desc()).offset(offset).limit(limit).all()
 
