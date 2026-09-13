@@ -140,7 +140,7 @@ def list_reports(
     q = db.query(Report)
 
     if site_id:
-        q = q.filter(Report.site_id.ilike(f"%{site_id}%"))
+        q = q.filter(Report.site_id == site_id)
 
     if status:
         q = q.filter(Report.processing_status == status)
