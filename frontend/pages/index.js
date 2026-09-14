@@ -224,7 +224,9 @@ export default function Dashboard() {
                   <tbody className="divide-y divide-border">
                     {clusters.slice(0,8).map(cl => (
                       <tr key={cl.cluster_id} className="table-row">
-                        <td className="table-cell font-medium text-text-primary">{cl.site_id}</td>
+                        <td className="table-cell font-medium text-text-primary">
+                           {cl.site_id ? cl.site_id : <span className="italic text-text-secondary">Cross-site</span>}
+                         </td>
                         <td className="table-cell text-xs text-text-secondary">{cl.sif_category?.replace(/_/g," ")}</td>
                         <td className="table-cell font-mono text-xs text-accent-orange">
                           <Link href={`/clusters/${cl.cluster_id}`} className="hover:underline">{cl.subtype_id}</Link>

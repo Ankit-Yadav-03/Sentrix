@@ -113,6 +113,28 @@ EDGE_UUIDS = [
 ]
 
 # ============================================================================
+# SEVERITY JUSTIFICATIONS — specific per incident
+# ============================================================================
+
+SEVERITY_JUSTIFICATIONS = {
+    "202-0456-32": "Personnel exposure to caustic chemical during valve maintenance. PPE change-out was not performed between tasks creating direct skin contact risk. No injury sustained but exposure pathway was active.",
+    "202-0441-09": "Direct skin contact with sodium hydroxide 30% solution occurred when sample valve was opened without chemical-resistant gloves. Mild irritation reported. Correct PPE was available at workstation and not used.",
+    "202-0471-18": "Chemical burns sustained to both forearms from caustic transfer line failure during tightening. Personnel injury occurred. Multiple simultaneous failures: PPE non-compliance, procedure deviation, and equipment fault. CRITICAL severity assigned.",
+    "202-0488-51": "Eye irritation from chemical splash during tank drain. Face shield available at workstation but not worn. Direct exposure to hazardous substance occurred without appropriate PPE in place.",
+    "202-0388-44": "Hot work permit expiry created uncontrolled ignition risk on crude transfer line. Gas test not repeated before work resumed. No ignition occurred but conditions for fire or explosion were present.",
+    "202-0399-17": "Sparks introduced into drain channel containing residual hydrocarbon liquid. Brief flash fire occurred and self-extinguished. Direct energy release event — no injury but fire realised, not merely potential.",
+    "202-0415-63": "Adjacent crude line isolation not physically verified before hot work. Contractor relied on verbal confirmation. No incident occurred but isolation failure created realistic explosion pathway.",
+    "202-0412-55": "Worker at 4.2 metres elevation without lanyard attached to lifeline. Fall arrest system available but not used. Unprotected fall from height scenario with serious injury potential.",
+    "202-0427-33": "Maintenance technician at 3.8 metres on scaffold without fall arrest harness donned. Harness signed out and left at ground level. Direct non-compliance with mandatory PPE at height.",
+    "202-0433-19": "Portable ladder at 2.5 metres not secured or footed. Manual stabilisation by second worker is not an approved control measure. Equipment misuse at height with fall potential.",
+    "202-0362-91": "Worker slipped on wet scaffold plank after overnight rainfall. No non-slip surface treatment applied and no weather-related work suspension issued. Environmental contributing factor not controlled.",
+    "202-0375-28": "Tanker reversed 15 metres without banksman. CCTV confirmed no ground observer present. Struck-by risk to any personnel in the reversing path. Procedure non-compliance confirmed by footage.",
+    "202-0348-77": "Rotating pump coupling guard found removed after maintenance. Work order closed without reinstating guard. Exposed rotating machinery creates entanglement hazard for any personnel in proximity.",
+    "202-0390-44": "Electric shock received from energised terminal block. LOTO applied to upstream breaker only — undocumented backfeed left downstream terminals live. Personnel injury occurred from direct electrical contact.",
+    "202-0499-12": "Operator transferring sulfuric acid between totes failed to don chemical-resistant apron as required by SOP-CHEM-012. Minor splash contacted forearm causing first-degree burns. Emergency shower activated within 30 seconds.",
+}
+
+# ============================================================================
 # REPORT DATA SPECIFICATION
 # ============================================================================
 
@@ -714,7 +736,7 @@ def seed_reports(session):
             activity_contexts=rdata["activity_contexts"],
             mapping_confidence=rdata["mapping_confidence"],
             evidence_span=rdata["evidence_span"],
-            severity_justification=f"Auto-seeded for demo: {rdata['severity']} severity based on incident description",
+            severity_justification=SEVERITY_JUSTIFICATIONS.get(rdata["osha_id"], f"{rdata['severity']} severity based on incident description"),
         )
         session.add(mapping)
         

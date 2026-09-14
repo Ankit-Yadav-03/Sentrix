@@ -49,7 +49,11 @@ export default function Clusters() {
                   {clusters.map(cl => (
                     <tr key={cl.cluster_id} className="table-row">
                       <td className="table-cell font-medium">
-                        <Link href={`/sites/${cl.site_id}`} className="link">{cl.site_id}</Link>
+                        {cl.site_id ? (
+                          <Link href={`/sites/${cl.site_id}`} className="link">{cl.site_id}</Link>
+                        ) : (
+                          <span className="italic text-text-secondary">Cross-site</span>
+                        )}
                       </td>
                       <td className="table-cell text-xs text-text-secondary">{cl.sif_category?.replace(/_/g," ")}</td>
                       <td className="table-cell font-mono text-xs text-accent-orange">

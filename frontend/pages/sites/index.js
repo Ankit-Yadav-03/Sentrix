@@ -57,7 +57,7 @@ export default function Sites() {
                       </p>
                     )}
                     <p className="text-xs text-text-secondary mt-1">{site.report_count_30d} reports in last 30 days</p>
-                    {site.state_entered_at && (
+                    {site.state_entered_at && ["WATCH", "ELEVATED", "CRITICAL"].includes(site.current_state) && (
                       <p className="text-xs text-text-secondary mt-0.5">
                         State since: {toISTDate(site.state_entered_at)}
                       </p>
