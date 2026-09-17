@@ -1,5 +1,5 @@
 """
-Tests for SIH26165 v0 Prototype
+Tests for Sentrix v0 Prototype
 Covers: Gate 1, Gate 2, vocabulary lock, pattern score engine, classifier, edge weights.
 Run: pytest tests/ -v
 """

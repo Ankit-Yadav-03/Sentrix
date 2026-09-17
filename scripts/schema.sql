@@ -1,4 +1,4 @@
--- SIH26165 SIF Precursor Detection System — Full Schema
+-- Sentrix SIF Precursor Detection System — Full Schema
 -- Run this before any application code. Creates all tables for v0 and v1.
 
 -- Enable UUID generation

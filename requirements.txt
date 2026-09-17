@@ -1,4 +1,4 @@
-# SIH26165 SIF Precursor Detection System — Python Dependencies
+# Sentrix SIF Precursor Detection System — Python Dependencies
 # Install: pip install -r requirements.txt
 
 # ── Web Framework ──────────────────────────────────────────────────────────

@@ -1,5 +1,5 @@
 """
-SIH26165 — Demo Data Seed Script (v0_2)
+Sentrix — Demo Data Seed Script (v0_2)
 Replaces the old seed script with deterministic, idempotent seeding for the demo.
 
 Run: python backend/seed_demo.py
@@ -964,7 +964,7 @@ def verify_seeding(session):
 
 def main():
     print("=" * 60)
-    print("SIH26165 v0_2 — Demo Data Seed Script")
+    print("Sentrix v0_2 — Demo Data Seed Script")
     print("=" * 60)
     
     # Init DB

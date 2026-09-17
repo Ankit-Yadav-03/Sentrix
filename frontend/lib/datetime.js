@@ -1,5 +1,5 @@
 /**
- * IST datetime utilities for SIH26165 frontend.
+ * IST datetime utilities for Sentrix frontend.
  *
  * Storage: UTC in PostgreSQL (correct, timezone-safe).
  * Display: IST (UTC+5:30) everywhere in the UI.

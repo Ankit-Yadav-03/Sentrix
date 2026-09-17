@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="bg-bg-secondary border-b border-border px-6 py-4 flex items-center justify-between sticky top-0 z-50">
       <div>
         <h1 className="text-lg font-bold text-text-primary">SIF Precursor Detection System</h1>
-        <p className="text-xs text-text-secondary">SIH26165 · Oil & Gas Safety Intelligence</p>
+        <p className="text-xs text-text-secondary">Sentrix · Oil & Gas Safety Intelligence</p>
       </div>
       <nav className="flex items-center gap-3 text-sm">
         <Link href="/" className="text-text-secondary hover:text-text-primary transition-colors px-2 py-1 rounded">

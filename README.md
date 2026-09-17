@@ -1,4 +1,4 @@
-# SIH26165 — SIF Precursor Detection System
+# Sentrix — SIF Precursor Detection System
 ### v0 Prototype
 
 AI-powered near-miss report analysis for oil & gas sites. Detects Serious Injury & Fatality (SIF) precursor patterns from near-miss reports using a locally-hosted LLM (Ollama) + distilBERT classifier + weighted graph cluster engine.
@@ -59,7 +59,7 @@ Report Submission (text / PDF / Flutter)
 ### 1. Clone & Configure
 
 ```bash
-cd sih26165
+cd Sentrix
 cp .env.example .env
 # Edit .env — set DATABASE_URL, OLLAMA_BASE_URL, OLLAMA_MODEL
 ```
@@ -216,7 +216,7 @@ The v0 prototype uses a rule-based fallback classifier. To train the distilBERT 
 # Each line format:
 # {"subtype_id":"CE.01","contributing_factors":["PPE_FAILURE"],"equipment_classes":["CHEMICAL_DRUM"],"activity_contexts":["CHEMICAL_HANDLING"],"evidence_span":"...","sif_category":"CHEMICAL_EXPOSURE","severity":"HIGH"}
 
-cd sih26165
+cd Sentrix
 python classifier_training/train.py \
   --data_dir ./classifier_training/data \
   --output_dir ./backend/models/distilbert-sif-v1.0 \
@@ -252,7 +252,7 @@ Target: ≥ 82% weighted F1, maximize CRITICAL severity recall.
 ## Project Structure
 
 ```
-sih26165/
+Sentrix/
 ├── backend/
 │   ├── main.py                  # FastAPI app entry point
 │   ├── api/

@@ -9,7 +9,7 @@ Target state after seeding:
   OIL_SITE_02: 1 × EF.04 report, Pattern Score ~0.12, State: NOMINAL
 
 Usage:
-  cd sih26165
+  cd Sentrix
   python scripts/seed_demo_data.py
 """
 
@@ -329,7 +329,7 @@ def compute_and_save_cluster(session, site_id: str, subtype_id: str, sif_categor
 
 def main():
     print("=" * 60)
-    print("SIH26165 — Demo Data Seed Script")
+    print("Sentrix — Demo Data Seed Script")
     print("=" * 60)
 
     # Init DB

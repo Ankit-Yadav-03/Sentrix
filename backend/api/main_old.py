@@ -1,5 +1,5 @@
 """
-FastAPI Application — SIH26165 SIF Precursor Detection System
+FastAPI Application — Sentrix SIF Precursor Detection System
 All routes from Architecture doc Section 4 (API contracts).
 """
 
@@ -73,7 +73,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="SIF Precursor Detection System — v0",
-    description="SIH26165: AI-powered near-miss report analysis for oil & gas safety",
+    description="Sentrix: AI-powered near-miss report analysis for oil & gas safety",
     version="0.1.0",
     lifespan=lifespan,
 )

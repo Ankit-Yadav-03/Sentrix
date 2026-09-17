@@ -1,5 +1,5 @@
 """
-FastAPI Application Entry Point — SIH26165 SIF Precursor Detection System
+FastAPI Application Entry Point — Sentrix SIF Precursor Detection System
 """
 
 import logging
@@ -39,7 +39,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="SIF Precursor Detection System — v0",
-    description="SIH26165: AI-powered near-miss report analysis for oil & gas safety",
+    description="Sentrix: AI-powered near-miss report analysis for oil & gas safety",
     version="0.1.0",
     lifespan=lifespan,
 )
