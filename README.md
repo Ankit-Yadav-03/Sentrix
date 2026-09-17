@@ -1,7 +1,7 @@
 # SIH26165 — SIF Precursor Detection System
 ### v0 Internal Round Prototype
 
-AI-powered near-miss report analysis for oil & gas sites. Detects Serious Injury & Fatality (SIF) precursor patterns from OSHA near-miss reports using a locally-hosted LLM (Ollama) + distilBERT classifier + weighted graph cluster engine.
+AI-powered near-miss report analysis for oil & gas sites. Detects Serious Injury & Fatality (SIF) precursor patterns from near-miss reports using a locally-hosted LLM (Ollama) + distilBERT classifier + weighted graph cluster engine.
 
 ---
 
